@@ -1,0 +1,34 @@
+# Global ignore for repo (backend + bot)
+
+# OS
+.DS_Store
+Thumbs.db
+Desktop.ini
+
+# Logs
+logs
+*.log
+npm-debug.log*
+yarn-error.log*
+
+# Env files
+**/.env
+**/.env.local
+**/.env.*.local
+
+# Node
+**/node_modules
+**/dist
+**/build
+**/.tsbuildinfo
+
+# Strapi specific (backend)
+backend/.tmp
+backend/.strapi
+backend/dist
+backend/build
+backend/.strapi-updater.json
+backend/.strapi-cloud.json
+backend/public/uploads/*
+!backend/public/uploads/.gitkeep
+
