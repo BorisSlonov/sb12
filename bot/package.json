@@ -9,7 +9,7 @@
     "start": "node dist/index.js",
     "dev:once": "tsx src/index.ts"
   },
-  "type": "module",
+  "type": "commonjs",
   "dependencies": {
     "dotenv": "^17.2.3",
     "grammy": "^1.38.3",
