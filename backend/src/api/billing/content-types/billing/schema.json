@@ -1,0 +1,23 @@
+﻿{
+    "kind":  "singleType",
+    "collectionName":  "billings",
+    "info":  {
+                 "singularName":  "billing",
+                 "pluralName":  "billings",
+                 "displayName":  "Billing"
+             },
+    "options":  {
+                    "draftAndPublish":  false
+                },
+    "attributes":  {
+
+                   },
+    "pluginOptions":  {
+                          "content-manager":  {
+                                                  "visible":  false
+                                              },
+                          "content-type-builder":  {
+                                                       "visible":  false
+                                                   }
+                      }
+}

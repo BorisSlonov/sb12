@@ -1,0 +1,23 @@
+﻿{
+    "kind":  "singleType",
+    "collectionName":  "bots",
+    "info":  {
+                 "singularName":  "bot",
+                 "pluralName":  "bots",
+                 "displayName":  "Bot"
+             },
+    "options":  {
+                    "draftAndPublish":  false
+                },
+    "attributes":  {
+
+                   },
+    "pluginOptions":  {
+                          "content-manager":  {
+                                                  "visible":  false
+                                              },
+                          "content-type-builder":  {
+                                                       "visible":  false
+                                                   }
+                      }
+}

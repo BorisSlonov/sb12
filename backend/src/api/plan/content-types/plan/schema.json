@@ -1,0 +1,61 @@
+﻿{
+    "kind":  "collectionType",
+    "collectionName":  "plans",
+    "info":  {
+                 "singularName":  "plan",
+                 "pluralName":  "plans",
+                 "displayName":  "Plan"
+             },
+    "options":  {
+                    "draftAndPublish":  false
+                },
+    "pluginOptions":  {
+
+                      },
+    "attributes":  {
+                       "name":  {
+                                    "type":  "string",
+                                    "required":  true,
+                                    "minLength":  2
+                                },
+                       "amount":  {
+                                      "type":  "integer",
+                                      "required":  true,
+                                      "min":  1
+                                  },
+                       "currency":  {
+                                        "enum":  [
+                                                     "RUB"
+                                                 ],
+                                        "default":  "RUB",
+                                        "type":  "enumeration"
+                                    },
+                       "interval":  {
+                                        "type":  "enumeration",
+                                        "default":  "month",
+                                        "enum":  [
+                                                     "month"
+                                                 ]
+                                    },
+                       "channel_id":  {
+                                          "type":  "string",
+                                          "required":  true
+                                      },
+                       "active":  {
+                                      "type":  "boolean",
+                                      "default":  true
+                                  },
+                       "description":  {
+                                           "type":  "text"
+                                       },
+                       "trial_amount":  {
+                                            "type":  "integer",
+                                            "min":  0
+                                        },
+                       "trial_days":  {
+                                          "type":  "integer",
+                                          "min":  0,
+                                          "max":  14
+                                      }
+                   }
+}

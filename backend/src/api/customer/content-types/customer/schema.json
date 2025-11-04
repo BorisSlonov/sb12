@@ -1,0 +1,49 @@
+﻿{
+    "kind":  "collectionType",
+    "collectionName":  "customers",
+    "info":  {
+                 "singularName":  "customer",
+                 "pluralName":  "customers",
+                 "displayName":  "Customer"
+             },
+    "options":  {
+                    "draftAndPublish":  false
+                },
+    "pluginOptions":  {
+                          "i18n":  {
+                                       "localized":  false
+                                   }
+                      },
+    "attributes":  {
+                       "telegram_id":  {
+                                           "type":  "integer",
+                                           "unique":  true,
+                                           "required":  true
+                                       },
+                       "username":  {
+                                        "type":  "string"
+                                    },
+                       "first_name":  {
+                                          "type":  "string"
+                                      },
+                       "last_name":  {
+                                         "type":  "string"
+                                     },
+                       "yk_customer_id":  {
+                                              "type":  "string"
+                                          },
+                       "subscriptions":  {
+                                             "type":  "relation",
+                                             "relation":  "oneToMany",
+                                             "target":  "api::subscription.subscription",
+                                             "mappedBy":  "customer"
+                                         },
+                       "accepted_terms":  {
+                                              "default":  false,
+                                              "type":  "boolean"
+                                          },
+                       "accepted_terms_at":  {
+                                                 "type":  "datetime"
+                                             }
+                   }
+}

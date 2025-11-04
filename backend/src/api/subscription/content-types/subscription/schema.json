@@ -1,0 +1,53 @@
+﻿{
+    "kind":  "collectionType",
+    "collectionName":  "subscriptions",
+    "info":  {
+                 "singularName":  "subscription",
+                 "pluralName":  "subscriptions",
+                 "displayName":  "Subscription"
+             },
+    "options":  {
+                    "draftAndPublish":  false
+                },
+    "attributes":  {
+                       "customer":  {
+                                        "type":  "relation",
+                                        "relation":  "manyToOne",
+                                        "target":  "api::customer.customer",
+                                        "inversedBy":  "subscriptions",
+                                        "required":  true
+                                    },
+                       "plan":  {
+                                    "type":  "relation",
+                                    "relation":  "manyToOne",
+                                    "target":  "api::plan.plan",
+                                    "required":  true
+                                },
+                       "status":  {
+                                      "type":  "enumeration",
+                                      "enum":  [
+                                                   "active",
+                                                   "canceled",
+                                                   "past_due",
+                                                   "incomplete"
+                                               ],
+                                      "default":  "incomplete"
+                                  },
+                       "current_period_end":  {
+                                                  "type":  "datetime"
+                                              },
+                       "yk_payment_method_id":  {
+                                                    "type":  "string"
+                                                },
+                       "yk_last_payment_id":  {
+                                                  "type":  "string"
+                                              },
+                       "trial_ends_at":  {
+                                             "type":  "datetime"
+                                         },
+                       "trial_reminder_sent":  {
+                                                   "default":  false,
+                                                   "type":  "boolean"
+                                               }
+                   }
+}
