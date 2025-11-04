@@ -5,6 +5,7 @@ import { HttpError } from '../lib/http';
 import { showTerms } from './terms';
 import { texts } from '../ui/texts';
 import { formatMoney, pluralDays } from '../ui/format';
+import { setPendingBuy } from '../state/pending';
 
 export const onBuy = async (ctx: Context) => {
   await ctx.answerCallbackQuery();
@@ -44,7 +45,8 @@ export const onPay = async (ctx: Context) => {
     await ctx.reply(texts.paymentLink, { reply_markup: kb });
   } catch (e: any) {
     if (e instanceof HttpError && e.status === 400) {
-      await ctx.reply(texts.needTerms);
+      await ctx.reply([texts.needTerms, texts.afterTermsAutoPay].join(' '));
+      setPendingBuy(user.id, planId);
       await showTerms(ctx);
     } else {
       console.error(e);
